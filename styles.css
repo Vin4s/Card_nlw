@@ -1,0 +1,140 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: "Roboto";
+}
+
+body {
+  background: linear-gradient(150deg, #0f2b05, #000000);
+  height: 100vh;
+  text-align: center;
+}
+
+header {
+  padding: 75px 0;
+}
+
+.card {
+  display: inline-block;
+  width: 264px;
+  height: 419px;
+
+  background-image: url(./assets/bg-ignite.svg);
+  border-radius: 0 0 13px 13px;
+
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-100px);
+
+  animation: appear 0.4s forwards;
+  animation-delay: .5s;
+  transition: background-image .4s;
+  
+  user-select: none;
+  -webkit-user-select: none;
+  
+  cursor: pointer;
+}
+
+.card > img {
+  position: absolute;
+  width: 250px;
+  height: 328px;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+
+  pointer-events: none;
+  
+  user-select: none;
+  -webkit-user-select: none;
+  
+  filter: drop-shadow(0 0 4px white);
+
+  z-index: -2;
+  will-change: background-image;
+}
+
+.card > #shape{
+  position: absolute;
+  width: 284px;
+  height: 120px;
+  left: -15px;
+  bottom: 0;
+  transition: background-image .4s;
+  z-index: -1;
+  background-image: url(./assets/shape-ignite.svg);
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  color: #FFF;
+  margin: 80px 0 20px 24px;
+  text-align: left;
+}
+
+.info h1 {
+  font-size: 18px;
+  line-height: 140%;
+}
+
+.info p {
+  font-size: 14px;
+  line-height: 160%;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+footer{
+  margin-top: 24px;
+  color: #FFF;
+}
+
+footer a {
+  color: #F9E757;
+  text-decoration: none;
+}
+
+footer > .sub{
+  display: inline-block;
+  width: 264px;
+  padding: .5rem 1rem;
+  margin: 1rem;
+
+  font-size: .85rem;
+  font-weight: bold;
+  
+  color: #000000;
+  background: #F9E757;
+
+  border-radius: .25rem;
+
+  transition: filter .25s;
+}
+
+footer > .sub:hover{
+  filter: brightness(.9);
+}
+
+footer p {
+
+  padding: 0.1rem;
+  text-align: center;
+  box-shadow: inset 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: .25rem;
+
+  color: #0f2b05;
+  font-size: 1rem;
+  font-weight: 300;
+}
